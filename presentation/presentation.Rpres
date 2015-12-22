@@ -1,0 +1,40 @@
+A very simple shiny application
+========================================================
+author: Gabriel A. von Winckler
+date: 22/12/2015
+
+Goals
+========================================================
+
+This is a **very** simple exercise to demonstrate the use o **shiny** to create data science applications.
+
+It uses the **eurodist** dataset, built in in **R**. It represent the road distance in _km_ between 21 cities in Europe.
+
+The application was only **29 lines**.
+
+Live demo:
+  https://winckler.shinyapps.io/coursera-dataprod
+
+User input
+========================================================
+
+Single input: A select box with 21 European cities.
+
+![user input](input.png)
+
+Output: plot
+========================================================
+
+As response, a plot with the distance form the other cities is generated:
+
+```{r}
+plot(sort(as.matrix(eurodist)["Milan",]), 
+     xlab = "", ylab = "distance (km)")
+```
+
+Output: table
+========================================================
+
+Also, a dynamic table is presented. It allow to sort by distance or filter by city name:
+
+![table output](output.png)
